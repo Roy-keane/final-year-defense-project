@@ -1,0 +1,15 @@
+<h2>Register</h2>
+<div class="card" style="max-width:520px;display:grid;gap:0.5rem;">
+  <label>Name <input type="text" [(ngModel)]="name()" (ngModelChange)="name.set($event)" placeholder="Your name" /></label>
+  <label>Email <input type="email" [(ngModel)]="email()" (ngModelChange)="email.set($event)" placeholder="you@example.com" /></label>
+  <label>Password <input type="password" [(ngModel)]="password()" (ngModelChange)="password.set($event)" placeholder="••••••" /></label>
+  <label>Role
+    <select [(ngModel)]="role()" (ngModelChange)="role.set($event)">
+      <option value="customer">Customer (Buyer)</option>
+      <option value="seller">Seller</option>
+      <option value="supplier">Supplier</option>
+    </select>
+  </label>
+  <button class="btn primary" (click)="register()">Create Account</button>
+  <p style="color:#a33" *ngIf="error()">{{ error() }}</p>
+</div>

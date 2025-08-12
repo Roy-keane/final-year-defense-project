@@ -1,0 +1,9 @@
+<h2>Testimonials</h2>
+<div class="card-grid">
+  @for (t of testimonials(); track t.id) {
+    <div class="card">
+      <p>“{{ t.content }}”</p>
+      <small>— {{ t.roleAtTime | titlecase }}</small>
+    </div>
+  }
+</div>

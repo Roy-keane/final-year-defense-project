@@ -1,0 +1,7 @@
+<h2>Login</h2>
+<div class="card" style="max-width:420px;">
+  <label>Email <input type="email" [(ngModel)]="email()" (ngModelChange)="email.set($event)" placeholder="you@example.com" /></label>
+  <label>Password <input type="password" [(ngModel)]="password()" (ngModelChange)="password.set($event)" placeholder="••••••" /></label>
+  <button class="btn primary" (click)="login()">Login</button>
+  <p style="color:#a33" *ngIf="error()">{{ error() }}</p>
+</div>

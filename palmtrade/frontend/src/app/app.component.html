@@ -1,0 +1,36 @@
+<header class="navbar">
+  <div class="brand" routerLink="/">
+    <span class="logo">🌴</span>
+    <span class="name">PalmTrade</span>
+  </div>
+  <nav class="links">
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+    <a routerLink="/about" routerLinkActive="active">About Us</a>
+    <a routerLink="/contact" routerLinkActive="active">Contact Us</a>
+    <a routerLink="/products" routerLinkActive="active">Products</a>
+    <a routerLink="/reviews" routerLinkActive="active">Reviews</a>
+    <a routerLink="/testimonials" routerLinkActive="active">Testimonials</a>
+    <div class="dropdown" tabindex="0">
+      <span>Services ▾</span>
+      <div class="menu">
+        <a routerLink="/services" routerLinkActive="active">Overview</a>
+        <a routerLink="/services/plantation-leasing" routerLinkActive="active">Plantation Leasing</a>
+        <a routerLink="/services" fragment="consultation">Consultation</a>
+        <a routerLink="/services" fragment="listing">Product Listing</a>
+      </div>
+    </div>
+  </nav>
+  <div class="auth">
+    <a routerLink="/login" class="btn outline">Login</a>
+    <a routerLink="/register" class="btn primary">Register</a>
+    <button class="icon" title="Cart">🛒</button>
+  </div>
+</header>
+
+<main class="container">
+  <router-outlet></router-outlet>
+</main>
+
+<footer class="footer">
+  <div>© {{ new Date().getFullYear() }} PalmTrade. All rights reserved.</div>
+</footer>

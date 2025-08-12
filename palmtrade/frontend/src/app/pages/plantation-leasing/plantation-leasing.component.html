@@ -1,0 +1,13 @@
+<h2>Available Plantation Leasing Options</h2>
+<div class="card-grid">
+  @for (l of leases(); track l.id) {
+    <div class="card">
+      <h3>{{ l.title }}</h3>
+      <p><strong>Location:</strong> {{ l.location }}</p>
+      <p><strong>Size:</strong> {{ l.sizeAcres }} acres</p>
+      <p><strong>Duration:</strong> {{ l.durationMonths }} months</p>
+      <p><strong>Price/Month:</strong> ₦{{ l.pricePerMonth }}</p>
+      <button class="btn primary">Request Lease</button>
+    </div>
+  }
+</div>
