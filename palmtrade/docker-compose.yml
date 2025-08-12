@@ -1,0 +1,33 @@
+version: '3.9'
+services:
+  db:
+    image: mysql:8.0
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: yourpassword
+      MYSQL_DATABASE: palmtrade
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+  backend:
+    build: ./backend
+    command: npm run dev
+    environment:
+      MYSQL_HOST: db
+      MYSQL_PORT: 3306
+      MYSQL_DB: palmtrade
+      MYSQL_USER: root
+      MYSQL_PASSWORD: yourpassword
+      PORT: 4000
+      JWT_SECRET: supersecretkey
+    ports:
+      - "4000:4000"
+    depends_on:
+      - db
+    volumes:
+      - ./backend:/app
+
+volumes:
+  db_data:

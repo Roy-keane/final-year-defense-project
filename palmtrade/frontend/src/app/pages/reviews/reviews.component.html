@@ -1,0 +1,10 @@
+<h2>User Reviews</h2>
+<div class="card-grid">
+  @for (r of reviews(); track r.id) {
+    <div class="card">
+      <h3>Rating: {{ r.rating }}/5</h3>
+      <p>{{ r.comment }}</p>
+      <small>By {{ r.author?.name }} on {{ r.product?.name }}</small>
+    </div>
+  }
+</div>
